@@ -1,0 +1,21 @@
+{% extends 'loja/base.html' %}
+
+{% block content %}
+<h1 class="text-center">Login</h1>
+
+<div class="col-md-6 mx-auto">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Nome de Usuário</label>
+            <input type="text" name="username" class="form-control" id="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" name="password" class="form-control" id="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+    </form>
+</div>
+{% endblock %}
+

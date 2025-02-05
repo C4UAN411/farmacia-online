@@ -1,0 +1,27 @@
+{% extends 'loja/base.html' %}
+
+{% block content %}
+<h1>Produtos em {{ categoria.nome }}</h1>
+
+<div class="row">
+    {% for produto in produtos %}
+        <div class="col-md-4">
+            <div class="card">
+                <!-- Verificando se a imagem existe e mostrando -->
+            
+                    <img src="{{ produto.imagem.url }}" class="card-img-top" alt="{{ produto.nome }}">
+             
+                
+                <div class="card-body">
+                    <h5 class="card-title">{{ produto.nome }}</h5>
+                    <p class="card-text">{{ produto.descricao }}</p>
+                    <p class="card-text"><strong>Preço:</strong> R$ {{ produto.preco }}</p>
+                    <a href="#" class="btn btn-success">Adicionar ao Carrinho</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+

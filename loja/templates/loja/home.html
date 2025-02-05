@@ -1,0 +1,27 @@
+{% extends 'loja/base.html' %}
+
+{% block content %}
+<h1>Categorias de Produtos</h1>
+
+<div class="search-bar">
+    <form method="get" action="#">
+        <input type="text" name="q" placeholder="Pesquisar produtos...">
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+</div>
+
+<div class="row">
+    {% for categoria in categorias %}
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="{{ categoria.nome }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ categoria.nome }}</h5>
+                    <a href="{% url 'categoria_produtos' categoria.id %}" class="btn btn-primary">Ver Produtos</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
